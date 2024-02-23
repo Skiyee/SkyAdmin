@@ -1,0 +1,16 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "#/*": ["./src/modules/*"]
+    },
+    "types": [
+      "node",
+      "vite/client",
+      "lodash-es"
+    ]
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "**/*.d.ts"],
+  "exclude": ["node_modules", "dist"]
+}
