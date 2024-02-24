@@ -123,7 +123,7 @@ export const useAuthStore = defineStore({
     authButtonList: [],
   }),
   actions: {
-    getAuthMenuList() {
+    async getAuthMenuList() {
       // const { data } = menuData
       // const menuList = formatMenu(menuData)
       // this.authMenuList = menuList

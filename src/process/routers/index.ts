@@ -1,15 +1,15 @@
 import type { App } from 'vue'
-import type { Router } from 'vue-router'
 
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+
 import { baseUrl, mode } from './config'
-import { genDynamicRouter } from './route/dynamicRouter'
-import { staticRouter } from './route/staticRouter'
+import { createRouterGuard } from './guard'
+import { genStaticRouter } from './route/staticRouter'
 
 // Router创建
 const router = createRouter({
   history: mode === 'HASH' ? createWebHashHistory(baseUrl) : createWebHistory(baseUrl),
-  routes: [...staticRouter],
+  routes: genStaticRouter(),
 })
 
 let lock = false
@@ -27,13 +27,8 @@ router.onError((err: Error) => {
   }
 })
 
-// Router初始化
-function initRouter(router: Router) {
-  genDynamicRouter()
-}
-
 // Router启用
 export function setupRouter(app: App) {
+  createRouterGuard(router)
   app.use(router)
-  initRouter(router)
 }

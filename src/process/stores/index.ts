@@ -1,5 +1,6 @@
 import type { App } from 'vue'
 import { useAuthStore } from './modules/auth'
+import { useUserStore } from './modules/user'
 
 // Store安装
 export function setupStore(app: App) {
@@ -11,5 +12,6 @@ export function setupStore(app: App) {
 export function useStore() {
   return {
     authStore: useAuthStore(),
+    userStore: useUserStore(),
   }
 }

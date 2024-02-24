@@ -1,15 +1,9 @@
 import type { App } from 'vue'
 
-import { setupRouter, setupStore, setupTool, useStore } from '@/process'
-
-function initProcess() {
-  const { menuStore } = useStore()
-}
+import { setupRouter, setupStore, setupTool } from '@/process'
 
 export function setupProcess(app: App) {
   setupTool()
   setupStore(app)
   setupRouter(app)
-
-  initProcess()
 }
