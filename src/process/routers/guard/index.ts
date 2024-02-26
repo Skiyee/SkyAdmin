@@ -1,7 +1,11 @@
 import type { Router } from 'vue-router'
 
-import { createAuthGuard } from './authGuard'
+import { createLoginGuard } from './loginGuard'
+import { createLoadingGuard } from './loadingGuard'
+import { createTitleGuard } from './titleGuard'
 
 export function createRouterGuard(router: Router) {
-  createAuthGuard(router)
+  createTitleGuard(router)
+  createLoadingGuard(router)
+  createLoginGuard(router)
 }

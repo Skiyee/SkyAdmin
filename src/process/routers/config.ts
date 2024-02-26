@@ -5,4 +5,4 @@ export const baseUrl = import.meta.env.VITE_BASE_URL
 export const mode = import.meta.env.VITE_ROUTER_MODE
 
 // 路由白名单
-export const whiteList = import.meta.env.VITE_ROUTER_WHITE_PATH
+export const whiteList = ['/login', '/404']

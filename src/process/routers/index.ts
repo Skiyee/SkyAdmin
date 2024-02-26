@@ -18,7 +18,7 @@ router.onError((err: Error) => {
   if (!lock) {
     lock = true
 
-    window.$message.error(`页面存在错误：${err.message}`)
+    NMessage.error(`页面存在错误：${err.message}`)
     console.error(err)
 
     setTimeout(() => {
